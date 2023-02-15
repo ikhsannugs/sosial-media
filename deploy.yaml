@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: sosmed-apps
-          image: DOCKER_NAME
+          image: ikhsannugs/sosmed-master:DOCKER_TAG
           ports:
             - containerPort: 80
 ---
