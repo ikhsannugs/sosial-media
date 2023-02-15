@@ -23,7 +23,7 @@ pipeline {
       }
       stage('Deploy to Server') {
         steps{
-          sh "sed -i "s+DOCKER_NAME+$DOCKER_REGISTRY/$DOCKER_IMAGE_NAME-$BRANCH_NAME\:$BUILD_NUMBER+g" deploy.yaml"
+          sh "sed -i "s+DOCKER_TAG+${BUILD_NUMBER}+g" deploy.yaml"
           sh "docker push $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME-$BRANCH_NAME:${BUILD_NUMBER}"        
         }
       }
